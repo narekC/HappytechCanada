@@ -1,0 +1,51 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-16 11:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. Name of the template
+msgid "404"
+msgstr ""
+
+#. Name of the template
+msgid "Catalog"
+msgstr ""
+
+#. Name of the template
+msgid "Contact"
+msgstr ""
+
+#. Name of the template
+msgid "Feature-Map"
+msgstr ""
+
+#. Name of the template
+msgid "Press"
+msgstr ""
+
+#. Name of the theme
+msgid "Happytech"
+msgstr ""
+
+#. Description of the theme
+msgid "WordPress personnal template for Happytech website"
+msgstr ""
+
+#. Author of the theme
+msgid "Comeet"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://happytech.life/"
+msgstr ""

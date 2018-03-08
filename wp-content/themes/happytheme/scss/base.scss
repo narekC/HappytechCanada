@@ -1,0 +1,25 @@
+/*
+ Theme Name:     Happytech
+ Description:    WordPress personnal template for Happytech website
+ Author:         Comeet
+ Author URI:     http://127.0.0.1
+ Version:        0.0.1
+ Tags :          happytech, comeet, wordpress, personnal, theme
+*/
+
+// Imports
+@import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+@import '_font.scss';
+@import '_variables.scss';
+@import '_slick.scss';
+@import '_mq.scss';
+@import '_normalization.scss';
+
+// HEADER
+header {
+    @include videoBackground;
+    position: relative;
+    overflow: hidden;
+}

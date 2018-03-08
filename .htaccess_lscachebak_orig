@@ -1,0 +1,53 @@
+    # HT ACCESS CONFIG for *.HAPPYTECH.LIFE
+
+    # Sécurité du site :
+
+    # Blocage de la visibilité de wp-config.php -
+    <Files wp-config.php>
+        order allow,deny
+        deny from all
+    </Files>
+
+    # Interdire la visualisation des répertoires du site -
+    Options All -Indexes
+
+    # Masquer les informations relatives au serveur -
+    ServerSignature Off
+
+    # Protéger .htaccess et .htpasswds -
+    <Files ~ "^.*\.([Hh][Tt][AaPp])">
+        order allow,deny
+        deny from all
+        satisfy all
+    </Files>
+
+    # Augmenter le temps maximal d'accès - 
+    <IfModule mod_php5.c>
+		php_value max_execution_time 300
+	</IfModule>
+
+    # Masquer l'identification d'un auteur
+    <IfModule mod_rewrite.c>
+        RewriteCond %{QUERY_STRING} ^author=([0-9]*)
+        RewriteRule .* - [F]
+    </IfModule>
+
+    # Référencement naturel
+
+    #Retirer l'expression "category" de vos urls
+    RewriteRule ^category/(.+)$ https://*.happytech.life/$1 [R=301,L]
+
+    #Autoriser l'utilisation du cache
+    <Ifmodule mod_expires.c>  
+        <filesmatch "\.(jpg|gif|png|css|js)$">
+            ExpiresActive on
+            ExpiresDefault "access plus 1 year"
+        </filesmatch> 
+    </ifmodule>
+
+    # Optimisation
+
+    <FilesMatch "(?i)^.*\.(ico|flv|jpg|jpeg|png|gif|js|css|woff)$">
+        ExpiresActive On
+        ExpiresDefault A2592000
+    </FilesMatch>

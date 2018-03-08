@@ -1,0 +1,93 @@
+/********************/
+
+/** NORMALIZATION **/
+
+/******************/
+
+/* Base */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Titles */
+
+@mixin headTitles {
+    font-family: $volte-light;
+    text-transform: uppercase;
+}
+
+@mixin subTitles {
+    font-family: $volte-medium;
+    margin: 0;
+}
+
+/* Texts */
+
+@mixin paragrah {
+    font-family: $volte-regular;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin aLinks {
+    font-family: $volte-regular;
+    text-decoration: none;
+    @include transition-duration (.5s);
+    &:hover {
+        @include transition-duration (.5s);
+        text-decoration: none;
+    }
+}
+
+/* Lists */
+
+@mixin ulList {
+    list-style: none;
+}
+
+
+/* Effects */
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin transition-duration($time) {
+    -webkit-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -ms-transition-duration: $time;
+    -o-transition-duration: $time;
+    transition-duration: $time;
+}
+
+@mixin videoBackground {
+    video#bgvid {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -100;
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+        background: url('../videos/HT.jpg') no-repeat;
+        background-size: cover;
+        -webkit-transform: translateX(-40%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+}

@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /wp-login.php
+Disallow: */trackback
+Disallow: /*/comments
+Disallow: /cgi-bin
+Disallow: /*.php$
+Disallow: /*.gz
+Disallow: /*.cgi
+Allow: /*css?*
+Allow: /*js?*
+Allow: /?*utm*
+Allow: /css/?
+User-agent: Google Image
+Allow: /*
+User-agent: Mediapartners-Google*
+Allow: /*

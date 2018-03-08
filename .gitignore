@@ -1,0 +1,9 @@
+env.php
+.htaccess
+.vs
+
+/vendor/
+/wp-content/themes/happytheme/vendor/
+/wp-content/themes/happytheme/.sass-cache/
+/wp-content/themes/happytheme/.bundle/
+/wp-content/themes/happytheme/old/

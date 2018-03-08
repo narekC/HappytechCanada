@@ -1,0 +1,1116 @@
+/*
+ Theme Name:     Happytech
+ Description:    WordPress personnal template for Happytech website
+ Author:         Comeet
+ Author URI:     http://127.0.0.1
+ Version:        0.0.1
+ Tags :          happytech, comeet, wordpress, personnal, theme
+*/
+
+// Imports
+@import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+@import '_font.scss';
+@import '_variables.scss';
+@import '_slick.scss';
+@import '_presse.scss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// CSS
+@media (max-width: 767px) {
+    #header {
+        .header-push {
+            padding: 15px 0 !important;
+        }
+        .blogTitle {
+            font-size: 44px !important;
+            text-align: center;
+            margin-top: 0px;
+        }
+        h2 {
+            text-align: center;
+        }
+        hr {
+            max-width: 92% !important;
+            margin: 20px 6px !important;
+        }
+        .app-buttons {
+            justify-content: center;
+        }
+    }
+    #footer {
+        text-align: center;
+        img {
+            margin-bottom: 15px;
+        }
+    }
+    .feature-map {
+        #map-container {
+            .titleMap {
+                font-size: 2em !important;
+            }
+        }
+    }
+    .navbar-happytech li a {
+        padding: 15px 10px !important;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    #contact {
+        #map {
+            height: 800px !important;
+        }
+    }
+    .navbar-happytech {
+        ul {
+            padding: 10px;
+        }
+    }
+    #menu-navigation {
+        li {
+            a {
+                padding: 10px 10px !important;
+            }
+        }
+        .center {
+            a {
+                padding: 10px 10px !important;
+                &:hover {
+                    color: $color-happytech;
+                }
+            }
+        }
+    }
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin transition-duration($time) {
+    -webkit-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -ms-transition-duration: $time;
+    -o-transition-duration: $time;
+    transition-duration: $time;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    line-height: 1.15;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    margin: 0;
+}
+
+.app-buttons {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    div[class^='icon-'],
+    div[class*=' icon-'] {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        display: block;
+        float: left;
+        width: 22px;
+        height: 22px;
+        margin-top: -11px;
+        background-size: 100%;
+    }
+    .buttons {
+        position: relative;
+        width: 200px;
+        height: 50px;
+        padding: 10px 10px;
+        margin: 10px 5px 0 5px;
+        border: 1px solid $color-happytech;
+        font-family: $volte-medium;
+        @include border-radius(50px);
+        &:hover {
+            cursor: pointer;
+            background: $color-happytech;
+            @include transition-duration(.5s);
+            span {
+                color: #fff;
+            }
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 22px;
+            float: left;
+            margin-left: 20px;
+            font-size: 12px;
+            line-height: 22px;
+            color: $color-happytech;
+            text-transform: uppercase;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    .navbar-collapse {
+        overflow: visible !important;
+        visibility: visible !important;
+    }
+    .navbar-custom {
+        .navbar-brand {
+            float: left;
+            padding: 15px;
+            font-size: 18px;
+            line-height: 20px;
+            height: 80px;
+            #logo {
+                width: 200px;
+                height: auto !important;
+            }
+        }
+        .navbar-toggle {
+            position: relative;
+            float: right;
+            margin-right: 15px;
+            padding: 10px;
+            margin-top: 23px;
+            margin-bottom: 23px;
+            background-color: transparent;
+            background-image: none;
+            border: 1px solid $color-happytech;
+            @include border-radius(4px);
+            &:hover {
+                background-color: rgba(243, 243, 243, 0.70);
+                border-color: $color-happytech;
+            }
+            .icon-bar {
+                background-color: $color-happytech;
+                &:hover,
+                &:focus {
+                    background-color: $color-happytech;
+                }
+            }
+        }
+    }
+}
+
+#header {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background-color: rgba(44, 61, 79, .76);
+    }
+    h1 {
+        margin-bottom: 0;
+        font-family: $volte-light;
+        font-size: 65px;
+        color: #fff;
+    }
+    h2 {
+        margin-top: 0;
+        font-family: $volte-medium;
+        font-size: 35px;
+        font-weight: bold;
+        color: rgba(238, 238, 238, 0.5);
+    }
+    hr {
+        max-width: 100%;
+        height: 2px;
+        margin: 20px 0;
+        border-top: 2px solid rgba(238, 238, 238, .5);
+    }
+    .header-push {
+        position: relative;
+        z-index: 100;
+        margin-top: 82px;
+        max-width: 500px;
+        .blogTitle {
+            text-transform: uppercase;
+            font-size: 72px;
+            line-height: 1;
+        }
+        .header-subtitle {
+            color: $color-header-subtitle;
+            .emoji {
+                width: 35px;
+                height: 35px;
+                opacity: 0.5;
+            }
+        }
+    }
+    .app-buttons {
+        margin-top: 10px;
+        span {
+            right: 0;
+            left: 0;
+            margin-left: 0;
+            text-align: center;
+        }
+    }
+}
+
+video#bgvid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    background: url('../videos/HT.jpg') no-repeat;
+    background-size: cover;
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.partners-list {
+    display: flex;
+    align-items: center;
+}
+
+.hic-partners {
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    .partnersTitle {
+        font-family: "volte-light";
+        text-transform: uppercase;
+        font-size: 3em;
+        opacity: 1;
+        color: $color-blue;
+        margin: 0;
+    }
+    .slick-dots li button:before {
+        font-size: 25px;
+        color: #fff;
+    }
+    img {
+        // max-height: 50px;
+        margin: 5px 35px;
+    }
+}
+
+.happytechfr-founders {
+    height: auto;
+    display: block;
+    padding: 15px 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebc041+0,f3a23b+99 */
+    background: #ebc041;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #ebc041 0%, #f3a23b 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ebc041 0%, #f3a23b 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ebc041 0%, #f3a23b 99%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebc041', endColorstr='#f3a23b', GradientType=1);
+    /* IE6-9 */
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+    .slick-dots li button:before {
+        font-size: 25px;
+        color: #fff;
+    }
+    img {
+        max-height: 50px;
+        margin: 5px 35px;
+    }
+    .hidden {
+        display: none;
+    }
+}
+
+.happytechfr-partners {
+    display: block;
+    padding: 30px 0;
+    .partnersTitle {
+        text-align: center;
+        margin: 0 0 30px 0;
+        h2 {
+            font-family: $volte-light;
+            display: inline;
+            color: $color-blue;
+            text-transform: uppercase;
+        }
+    }
+    .slick-dots li button:before {
+        font-size: 25px;
+        color: #000;
+    }
+    .slides-partners {
+        width: 225px;
+        display: flex;
+        justify-content: center;
+        margin: 5px 35px;
+    }
+}
+
+.navbar-happytech {
+    font-family: $volte-medium;
+    text-transform: uppercase;
+    font-size: 13px;
+    min-height: 82px;
+    #menu-navigation {
+        li {
+            a {
+                @include transition-duration(0.5s);
+                &:hover {
+                    color: $color-happytech;
+                    @include transition-duration(0.5s);
+                }
+            }
+        }
+    }
+
+    .block-h {
+        transform: rotate(45deg);
+        background-color: #eee;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin: 22px 12px 22px 12px;
+        ;
+        text-align: center;
+        @include border-radius(7px);
+        @include transition-duration(0.5s);
+        &:hover {
+            background-color: $color-happytech;
+            @include transition-duration(0.5s);
+            a {
+                color: #fff !important;
+            }
+        }
+        a {
+            transform: rotate(-45deg);
+            padding: 6px 11px;
+        }
+    }
+    li {
+        a {
+            padding: 30px 10px;
+        }
+    }
+}
+
+#menu-button {
+    color: #777 !important;
+    @include transition-duration(0.5s);
+    margin-right: 20px;
+    &:hover {
+        color: $color-happytech !important;
+        @include transition-duration(0.5s);
+    }
+    &:focus {
+        outline: 0;
+        @include transition-duration(0.5s);
+    }
+    &:active {
+        color: $color-happytech !important;
+    }
+}
+
+.activeButton {
+    background-color: transparent !important;
+    color: $color-happytech !important;
+}
+
+.content {
+    padding: 50px 0;
+    h1 {
+        font-family: $volte-light;
+        font-size: 35px;
+        font-weight: lighter;
+        color: $color-blue;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 1em 0 0.5em 0;
+    }
+    p {
+        font-family: $volte-regular;
+        font-size: 16px;
+        color: $color-blue;
+        margin: 0;
+    }
+}
+
+#contact {
+    span {
+        font-weight: normal !important;
+        font-family: $volte-medium;
+    }
+    #map {
+        min-height: 600px;
+        width: 100%;
+    }
+    h2 {
+        font-family: $volte-light;
+        font-size: 72px;
+        color: #fff;
+    }
+    p {
+        font-family: $volte-regular;
+        font-size: 14px;
+        color: #fff;
+    }
+    ul {
+        padding-left: 0;
+        li {
+            list-style: none;
+            text-align: left;
+            label {
+                font-weight: normal;
+                font-size: 12px;
+                color: red;
+            }
+        }
+    }
+    input {
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 2px solid #d5d8dc;
+        box-shadow: none;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -ms-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        font-weight: normal;
+    }
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'] {
+        width: 95%;
+    }
+    select {
+        font-family: $volte-medium;
+        width: 95%;
+    }
+    input[type='submit'] {
+        display: block;
+        padding: 10px 20px;
+        margin: 30px auto 0 auto;
+        color: $color-happytech;
+        text-transform: uppercase;
+        background: transparent; //        border: 1px solid $color-happytech;
+        //        @include border-radius(50px);
+        @include transition-duration(.5s);
+        &:hover {
+            color: #fff;
+            cursor: hand;
+            background: $color-happytech; //            border: 1px solid $color-happytech;
+            @include transition-duration(.5s);
+        }
+    }
+    ::-webkit-input-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    ::-moz-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    :-ms-input-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    :-moz-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    .form-content {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 99;
+        padding: 30px;
+        margin-top: 125px;
+        background: #fff;
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+        -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+        .form-control {
+            padding: 6px 12px 6px 0;
+        }
+        .form-control,
+        textarea {
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 2px solid #d5d8dc;
+            box-shadow: none;
+            @include border-radius(0px);
+            @include transition-duration(.2s);
+            &:focus {
+                border-bottom: 2px solid $color-happytech;
+                @include transition-duration(.2s);
+            }
+        }
+        .loading {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            display: none;
+            background: rgba(255, 255, 255, .8);
+            .loader {
+                position: absolute;
+                top: 45%;
+                left: 45%;
+                margin: 0;
+                color: $color-happytech;
+            }
+            .thumb-up {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: none;
+                margin-top: -25px;
+                margin-left: -25px;
+                font-size: 50px;
+                color: $color-happytech;
+            }
+            .thumb-down {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: none;
+                margin-top: -25px;
+                margin-left: -25px;
+                font-size: 50px;
+                color: red;
+            }
+        }
+    }
+}
+
+#footer {
+    padding: 25px 0;
+    background-color: #697d8f;
+    .logo {
+        width: 50px;
+    }
+    h4 {
+        margin-top: 0;
+        font-family: $volte-medium;
+        font-size: 13px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    h3 {
+        margin-top: 0;
+        font-family: $volte-medium;
+        font-size: 11px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .menu {
+        li {
+            a {
+                font-family: $volte-medium;
+                font-size: 12px;
+                color: rgba(255, 255, 255, .50);
+                @include transition-duration(.5s);
+                &:hover {
+                    color: #fff;
+                    @include transition-duration(.5s);
+                }
+                &.light {
+                    display: block;
+                    margin-top: 10px;
+                    opacity: .5;
+                }
+            }
+        }
+    }
+    .socials {
+        p {
+            font-family: $volte-regular;
+            font-size: 12px;
+            color: #fff;
+            opacity: .2;
+            @include transition-duration(.3s);
+            &:hover {
+                opacity: 1;
+                @include transition-duration(.5s);
+            }
+        }
+        ul {
+            margin-left: 0;
+            a {
+                font-size: 20px;
+                color: #fff;
+                @include transition-duration(.5s);
+                &:hover {
+                    color: $color-happytech;
+                    @include transition-duration(.5s);
+                }
+            }
+        }
+    }
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .domainLink {
+            a {
+                font-family: $volte-regular;
+                font-size: 12px;
+                color: #fff;
+                opacity: .2;
+                text-decoration: none;
+                @include transition-duration (.3s);
+                &:hover {
+                    opacity: 1;
+                    @include transition-duration(.5s);
+                }
+            }
+        }
+        .joinLink {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $volte-regular;
+                font-size: 12px;
+                color: #fff;
+                opacity: .2;
+                @include transition-duration (.3s);
+                &:hover {
+                    color: $color-happytech;
+                    @include transition-duration (.3s);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+#footerGlobal {
+    position: absolute;
+    bottom: -67px;
+    width: 100%;
+    text-align: center;
+    background: $color-blue;
+    p {
+        padding: 25px 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: $volte-regular;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .2);
+    }
+    a {
+        color: inherit;
+        @include transition-duration(.5s);
+        &:hover {
+            text-decoration: none;
+            @include transition-duration(.5s);
+            color: $color-happytech !important;
+        }
+    }
+}
+
+#copyrights {
+    text-align: center;
+    background: $color-blue;
+    p {
+        padding: 25px 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: $volte-regular;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .2);
+    }
+}
+
+::selection {
+    background: $color-happytech;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: $color-happytech;
+    /* Gecko Browsers */
+}
+
+.blog-post {
+    padding: 10px 0; // text-align: center;
+    h2 {
+        font-family: $volte-light;
+    }
+    img {
+        width: 100%;
+        max-width: 400px;
+        max-height: 400px;
+        padding-bottom: 20px;
+    }
+}
+
+.feature-map {
+    // padding-bottom: 30px;
+    #map-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .titleMap {
+            font-family: $volte-light;
+            text-transform: uppercase;
+            position: absolute;
+            font-size: 3em;
+            z-index: 100;
+            opacity: 1;
+            color: white;
+            margin: 0;
+        }
+        #implantMap {
+            position: relative;
+            width: 100%;
+            height: auto;
+            -webkit-filter: grayscale(50%);
+            /* Safari */
+            filter: grayscale(50%);
+        }
+    }
+}
+
+#htSites {
+    padding: 30px 0;
+    text-align: center;
+    .htText {
+        text-align: center;
+        h2 {
+            font-family: $volte-light;
+            display: inline;
+            color: white;
+        }
+    }
+    .htLocation {
+        img {
+            padding: 30px;
+        }
+    }
+}
+
+.hic-partners {
+    padding: 30px 0;
+    text-align: center;
+    .partnersTitle {
+        text-align: center;
+        h2 {
+            font-family: $volte-light;
+            display: inline;
+            color: $color-blue;
+        }
+    }
+    .hicList {
+        img {
+            padding: 30px;
+        }
+    }
+}
+
+.htAdform {
+    font-family: $volte-regular;
+    padding: 40px;
+    margin: 30px 0;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.16);
+    h4 {
+        font-size: 18px !important;
+    }
+    .adhesionTitle {
+        padding: 0 0 50px 0 !important;
+    }
+    .founderList {
+        list-style-type: none !important;
+    }
+    input[type='submit'] {
+        display: block;
+        padding: 10px 20px;
+        margin: 50px auto 0 auto;
+        color: $color-happytech;
+        text-transform: uppercase;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #d5d8dc; // border: 1px solid $color-happytech;
+        @include transition-duration(.5s);
+        &:hover {
+            color: #fff;
+            cursor: hand;
+            background: $color-happytech; // border: 1px solid $color-happytech;
+            @include transition-duration(.5s);
+        }
+    }
+    input {
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 2px solid #d5d8dc;
+        box-shadow: none;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        -ms-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        font-weight: normal;
+    }
+    textarea {
+        margin-bottom: 30px;
+        border: none;
+        border: 2px solid #d5d8dc;
+        box-shadow: none;
+        max-width: 445px;
+        width: 100%;
+        height: 200px;
+        max-height: 250px;
+        @include border-radius(0px);
+        @include transition-duration(.2s);
+        &:focus {
+            border-bottom: 2px solid $color-happytech;
+            @include transition-duration(.2s);
+        }
+    }
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'] {
+        width: 95%;
+    }
+    ::-webkit-input-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    ::-moz-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    :-ms-input-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    :-moz-placeholder {
+        font-family: $volte-regular;
+        color: rgba(35, 35, 35, .3);
+    }
+    .wpcf7-list-item {
+        display: block;
+    }
+    label {
+        font-weight: normal !important;
+    }
+}
+
+.companiesList {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .companyCard {
+        margin: 30px;
+        width: 250px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .companyLogo {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .socialBar {
+            margin: 25px 0 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            a {
+                color: #777;
+                @include transition-duration(0.5s);
+                &:hover {
+                    @include transition-duration(0.5s);
+                    color: $color-happytech;
+                }
+                i {
+                    font-size: 20px;
+                }
+            }
+            .flag {
+                width: 20px !important;
+                height: 12px !important;
+            }
+        }
+        .description {
+            p {
+                font-family: $volte-regular !important;
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.catalogLink {
+    text-align: center;
+    margin: 30px 0 0 0;
+    a {
+        text-decoration: none !important;
+    }
+    h2 {
+        font-family: $volte-light;
+        display: inline;
+        color: $color-happytech;
+        text-transform: uppercase;
+
+    }
+}
+
+.legalTermsText {
+    text-align: center;
+    font-family: $volte-regular;
+    h1,
+    h2 {
+        font-family: $volte-light;
+    }
+}
+
+.pressArticles {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .pressArticle {
+        margin: 30px;
+        width: 250px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .logo {
+            height: 70px;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .articleTitle{
+            text-align: center;
+            font-family: $volte-light;
+            font-size: 18px;
+            p {
+                margin: 0;
+            }
+        }
+        .excerpt {
+            p {
+                font-family: $volte-regular !important;
+                text-align: justify;
+            }
+        }
+        .link {
+            a {
+                color: black;
+                font-size: 15px;
+                font-family: $volte-medium;
+                @include transition-duration(0.5s);
+                text-decoration: none;
+                &:hover {
+                    @include transition-duration(0.5s);
+                    color: $color-happytech;
+                }
+            }
+        }
+    }
+}
+
+.eventContent {
+    font-family: $volte-regular;
+    font-size: 16px;
+    color: $color-blue;
+    h2 {
+        text-align: center;
+        text-transform: uppercase !important;
+        margin: 0;
+        padding: 25px 0 15px 0;
+        font-size: 24px;
+        color: $color-blue;
+    }
+    ol {
+        
+    }
+}
